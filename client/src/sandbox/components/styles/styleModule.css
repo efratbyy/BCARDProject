@@ -1,0 +1,14 @@
+.red {
+  background-color: rgb(128, 38, 38);
+}
+
+.blue {
+  background-color: rgb(38, 38, 120);
+  color: rgb(239, 239, 239);
+}
+
+.paragraph {
+  background-color: green;
+  color: grey;
+  font-size: 3rem;
+}
