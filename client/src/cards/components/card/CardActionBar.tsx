@@ -2,13 +2,14 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import CallIcon from "@mui/icons-material/Call";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Box, CardActions, IconButton } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import ROUTES from "../../../routes/routesModel";
 import { useUser } from "../../../users/providers/UserProvider";
 import CardDeleteDialog from "./CardDeleteDialog";
 import useCards from "../../hooks/useCards";
+import { changeLikeStatus } from "../../services/cardApi";
 
 type CardActionBarProps = {
   onDelete: (id: string) => void;
@@ -16,6 +17,7 @@ type CardActionBarProps = {
   cardId: string;
   cardUserId: string;
   cardLikes: string[];
+  phoneNumber: string;
 };
 
 const CardActionBar: React.FC<CardActionBarProps> = ({
@@ -24,6 +26,7 @@ const CardActionBar: React.FC<CardActionBarProps> = ({
   cardId,
   cardUserId,
   cardLikes,
+  phoneNumber,
 }) => {
   const navigate = useNavigate();
   const { user } = useUser();
@@ -31,7 +34,7 @@ const CardActionBar: React.FC<CardActionBarProps> = ({
 
   const [isDialogOpen, setDialog] = useState(false);
   const [isLiked, setLike] = useState(
-    () => !!cardLikes.find((id) => id === user!._id)
+    () => !!cardLikes.find((id) => user && id === user._id)
   );
 
   const handleDialog = (term?: string) => {
@@ -44,11 +47,35 @@ const CardActionBar: React.FC<CardActionBarProps> = ({
     onDelete(cardId);
   };
 
+  // const handleLike = useCallback(async () => {
+  //   try {
+  //     setLike((prev) => !prev);
+  //     await handleLikeCard(cardId);
+  //   } catch (error) {
+  //     Promise.reject(error);
+  //   }
+  // }, [isLiked]);
+
+  // useEffect(() => {
+  //   const handleLike = async () => {
+  //     setLike((prev) => !prev);
+  //     await handleLikeCard(cardId);
+  //   };
+  //   handleLike();
+  // }, [isLiked]);
+
+  // useEffect(() => {
+  //   onLike(cardId);
+  // }, [isLiked]);
+
   const handleLike = async () => {
     setLike((prev) => !prev);
-    await handleLikeCard(cardId);
-    onLike(cardId);
-    console.log(isLiked);
+    //await handleLikeCard(cardId);
+    await onLike(cardId);
+  };
+
+  const handlePhoneCall = () => {
+    window.location.href = `tel:${phoneNumber}`;
   };
 
   return (
@@ -78,7 +105,11 @@ const CardActionBar: React.FC<CardActionBarProps> = ({
         </Box>
 
         <Box>
-          <IconButton aria-label="call business">
+          <IconButton
+            sx={{ cursor: "pointer" }}
+            onClick={handlePhoneCall}
+            aria-label="call business"
+          >
             <CallIcon />
           </IconButton>
 

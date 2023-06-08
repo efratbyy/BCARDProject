@@ -16,28 +16,29 @@ const SearchBar = () => {
   const [searchValue, setSearchValue] = useState("");
   const { handleGetCards } = useCards();
 
-  // const handleChange = ({ target }: CardInterface[] | any | null) =>
-  //   setSearch({ q: target.value });
+  const handleChange = ({ target }: CardInterface[] | any | null) =>
+    setSearch({ q: target.value });
 
-  const handleChange: React.ChangeEventHandler<
-    HTMLInputElement | HTMLTextAreaElement
-  > = (event) => {
-    const target = event.target as HTMLInputElement;
-    const value = target.value;
+  // const handleChange: React.ChangeEventHandler<
+  //   HTMLInputElement | HTMLTextAreaElement
+  // > = (event) => {
+  //   const target = event.target as HTMLInputElement;
+  //   const value = target.value;
 
-    setSearch({ q: value }); // Update the search parameter
-    setSearchValue(value); // Update the search value
-  };
+  //   setSearch({ q: value }); // Update the search parameter
+  //   setSearchValue(value); // Update the search value
+  // };
 
-  const handleClearSearch = () => {
-    setSearchValue("");
-    setSearch((params) => {
-      const updateParams = new URLSearchParams(params);
-      updateParams.delete("q");
-      return updateParams;
-    }); // Clear the search parameter
-    handleGetCards(); // Fetch all cards again
-  };
+  // const handleClearSearch = () => {
+  //   setSearchValue("");
+  //   setSearch((params) => {
+  //     const updateParams = new URLSearchParams(params);
+  //     updateParams.delete("q");
+  //     return updateParams;
+  //   }); // Clear the search parameter
+  //   setSearch({ q: "" });
+  //   handleGetCards(); // Fetch all cards again
+  // };
 
   return (
     <Box display="inline-flex">
@@ -46,12 +47,11 @@ const SearchBar = () => {
           sx={{ backgroundColor: isDark ? "#333333" : "#e3f2fd" }}
           placeholder="Search"
           size="small"
-          // value={searchParams.get("q") ?? ""}
-          value={searchValue}
+          // value={searchValue}
           onChange={handleChange}
           endAdornment={
             <InputAdornment position="end">
-              <IconButton edge="end" onClick={handleClearSearch}>
+              <IconButton edge="end" onClick={handleChange}>
                 <SearchIcon />
               </IconButton>
             </InputAdornment>

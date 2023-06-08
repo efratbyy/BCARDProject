@@ -7,8 +7,12 @@ import useCards from "../hooks/useCards";
 type CardsPageProps = {};
 
 const CardsPage: React.FC<CardsPageProps> = () => {
-  const { value, handleGetCards, handleDeleteCard, handleLikeCard } =
-    useCards();
+  const {
+    value,
+    handleGetCards,
+    handleDeleteCard,
+    handleLikeCard,
+  } = useCards();
   const { filteredCards, error, isLoading } = value;
 
   useEffect(() => {

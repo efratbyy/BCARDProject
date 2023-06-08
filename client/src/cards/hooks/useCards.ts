@@ -31,8 +31,8 @@ const useCards = () => {
   const [cards, setCards] = useState<CardsType>(null);
   const [card, setCard] = useState<CardType>(null);
   const [query, setQuery] = useState<string>("");
-  const [filteredCards, setFilter] = useState<CardInterface[] | null>();
-  const [searchParams] = useSearchParams("");
+  const [filteredCards, setFilter] = useState<CardInterface[] | null>(null);
+  const [searchParams] = useSearchParams();
 
   useAxiosInterceptors();
 
@@ -108,6 +108,7 @@ const useCards = () => {
         const cardFomServer = await editCard(normalizedCard);
         requestStatus(false, null, null, cardFomServer);
         snack("success", "The business card has been successfully updated");
+        console.log(cardFomServer);
         navigate(ROUTES.MY_CARDS);
       } catch (error) {
         if (typeof error === "string") requestStatus(false, error, null);
@@ -128,10 +129,10 @@ const useCards = () => {
 
   const handleLikeCard = useCallback(async (cardId: string) => {
     try {
-      setLoading(true);
+      //setLoading(true);
       const card = await changeLikeStatus(cardId);
-      const cards = await getCards();
-      requestStatus(false, null, cards, card);
+      //const cards = await getCards();
+      //requestStatus(false, null, null, card);
     } catch (error) {
       if (typeof error === "string") requestStatus(false, error, null);
     }
@@ -150,26 +151,20 @@ const useCards = () => {
     }
   }, [user, handleGetCards]);
 
-  // useEffect(() => {
-  //   setQuery(searchParams.get("q") ?? "");
-  // }, [searchParams]);
-
   useEffect(() => {
-    const newQuery =
-      searchParams.get("q") !== null ? searchParams.get("q") : "";
-    setQuery((prevQuery) => newQuery || prevQuery);
+    const query = searchParams.get("q");
+    if (query != null) {
+      setQuery(query);
+    } else {
+      setQuery("");
+    }
   }, [searchParams]);
 
   // useEffect(() => {
-  //   if (cards) {
-  //     setFilter(
-  //       cards.filter(
-  //         (card) =>
-  //           card.title.includes(query) || String(card.bizNumber).includes(query)
-  //       )
-  //     );
-  //   }
-  // }, [cards, query]);
+  //   const newQuery =
+  //     searchParams.get("q") !== null ? searchParams.get("q") : "";
+  //   setQuery((prevQuery) => newQuery || prevQuery);
+  // }, [searchParams]);
 
   useEffect(() => {
     if (cards) {

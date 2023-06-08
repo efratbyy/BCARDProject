@@ -3,11 +3,16 @@ import useCards from "../cards/hooks/useCards";
 import { Container } from "@mui/material";
 import PageHeader from "../components/PageHeader";
 import CardsFeedback from "../cards/components/CardsFeedback";
+import { useUser } from "../users/providers/UserProvider";
+import { Navigate } from "react-router-dom";
+import ROUTES from "../routes/routesModel";
 
 const CardFavPage = () => {
+  const { user } = useUser();
+  if (!user) return <Navigate replace to={ROUTES.ROOT} />;
   const { value, ...rest } = useCards();
   const { isLoading, error, filteredCards } = value;
-  const { handleGetFavCards, handleDeleteCard } = rest;
+  const { handleGetFavCards, handleDeleteCard, handleLikeCard } = rest;
 
   useEffect(() => {
     handleGetFavCards();
@@ -21,7 +26,8 @@ const CardFavPage = () => {
     [handleDeleteCard]
   );
 
-  const changeLikeStatus = useCallback(async () => {
+  const changeLikeStatus = useCallback(async (cardId: string) => {
+    await handleLikeCard(cardId);
     await handleGetFavCards();
   }, []);
 

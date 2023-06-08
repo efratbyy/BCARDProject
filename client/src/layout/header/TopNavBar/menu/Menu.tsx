@@ -45,6 +45,14 @@ const Menu: React.FC<Props> = ({ isOpen, anchorEl, onClose }) => {
           styles={{ display: { xs: "block", md: "none" } }}
         />
 
+        {user && user.isAdmin && (
+          <MenuLink
+            label="sandbox"
+            navigateTo={ROUTES.SANDBOX}
+            onClick={onClose}
+          />
+        )}
+
         {!user && (
           <>
             <MenuLink
@@ -63,6 +71,16 @@ const Menu: React.FC<Props> = ({ isOpen, anchorEl, onClose }) => {
         )}
         {user && (
           <>
+            <MenuLink
+              label="favorit cards"
+              navigateTo={ROUTES.FAV_CARDS}
+              onClick={onClose}
+            />
+            <MenuLink
+              label="my cards"
+              navigateTo={ROUTES.MY_CARDS}
+              onClick={onClose}
+            />
             <MenuLink
               label="profile"
               navigateTo={ROUTES.USER_PROFILE}

@@ -9,7 +9,7 @@ const useForm = <TForm extends Record<string, unknown>>(
   handleSubmit: HandleSubmit
 ) => {
   const [data, setData] = useState(initialForm);
-  const [errors, setErrors] = useState<Record<string, string>>({}); // errors משנה את הערך האובייקט של
+  const [errors, setErrors] = useState<Record<string, string>>({});
 
   const handleReset = useCallback(() => {
     setData(initialForm);

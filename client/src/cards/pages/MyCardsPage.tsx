@@ -9,8 +9,12 @@ import AddIcon from "@mui/icons-material/Add";
 import CardsFeedback from "../components/CardsFeedback";
 
 export const MyCardsPage = () => {
-  const { handleGetMyCards, handleDeleteCard, handleLikeCard, value } =
-    useCards();
+  const {
+    handleGetMyCards,
+    handleDeleteCard,
+    handleLikeCard,
+    value,
+  } = useCards();
   const { isLoading, error, cards, filteredCards } = value;
   const { user } = useUser();
   const navigate = useNavigate();

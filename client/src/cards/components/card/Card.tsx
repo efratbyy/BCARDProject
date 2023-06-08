@@ -31,6 +31,7 @@ const Card: React.FC<Props> = ({ card, onDelete, onLike }) => {
         onLike={onLike}
         cardUserId={card.user_id}
         cardLikes={card.likes}
+        phoneNumber={card.phone}
       />
     </MuiCard>
   );

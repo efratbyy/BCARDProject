@@ -8,9 +8,19 @@ import { Link } from "react-router-dom";
 
 type CardBodyProps = { card: CardInterface };
 
-const CardBody: React.FC<CardBodyProps> = ({ card }) => {
-  const { title, subtitle, address, phone, bizNumber } = card;
-  const { city, houseNumber, street, country } = address;
+const CardDetailsBody: React.FC<CardBodyProps> = ({ card }) => {
+  const {
+    title,
+    subtitle,
+    description,
+    email,
+    address,
+    phone,
+    bizNumber,
+    web,
+    createdAt,
+  } = card;
+  const { city, houseNumber, street, country, zip } = address;
   return (
     <CardContent sx={{ pb: 1 }}>
       <CardHeader title={title} subheader={subtitle} sx={{ p: 0, mb: 1 }} />
@@ -23,12 +33,19 @@ const CardBody: React.FC<CardBodyProps> = ({ card }) => {
         />
         <CardBodyRow
           title="Address"
-          content={`${street} ${houseNumber} ${city} ${country}`}
+          content={`${street} ${houseNumber} ${city} ${zip}${country}`}
         />
+        <CardBodyRow
+          title="Email"
+          content={<Link to={`mailto:${email}`}>{email}</Link>}
+        />
+        <CardBodyRow title="Web" content={<Link to={`${web}`}>{web}</Link>} />
+        <CardBodyRow title="Description" content={description} />
+        <CardBodyRow title="Created at" content={String(createdAt)} />
         <CardBodyRow title="Card Number" content={String(bizNumber)} />
       </Box>
     </CardContent>
   );
 };
 
-export default CardBody;
+export default CardDetailsBody;

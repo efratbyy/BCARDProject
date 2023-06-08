@@ -3,7 +3,7 @@ const ROUTES = {
   ABOUT: "/about",
   CARDS: "/cards",
   CARD_DETAILS: "/card-info",
-  EDIT_CARD: "edit-card",
+  EDIT_CARD: "/edit-card",
   FAV_CARDS: "/fav-cards",
   CREATE_CARD: "/create-card",
   MY_CARDS: "/my-cards",
