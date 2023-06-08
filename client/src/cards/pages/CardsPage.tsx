@@ -3,10 +3,16 @@ import PageHeader from "../../components/PageHeader";
 import { Container } from "@mui/material";
 import CardsFeedback from "../components/CardsFeedback";
 import useCards from "../hooks/useCards";
+import { useUser } from "../../users/providers/UserProvider";
+import { Navigate } from "react-router-dom";
+import ROUTES from "../../routes/routesModel";
 
 type CardsPageProps = {};
 
 const CardsPage: React.FC<CardsPageProps> = () => {
+  const { user } = useUser();
+  if (!user) return <Navigate replace to={ROUTES.LOGIN} />;
+
   const {
     value,
     handleGetCards,
