@@ -39,7 +39,14 @@ const CardDetailsBody: React.FC<CardBodyProps> = ({ card }) => {
           title="Email"
           content={<Link to={`mailto:${email}`}>{email}</Link>}
         />
-        <CardBodyRow title="Web" content={<Link to={`${web}`}>{web}</Link>} />
+        <CardBodyRow
+          title="Web"
+          content={
+            <Link to={`${web}`} target="_blank">
+              {web}
+            </Link>
+          }
+        />
         <CardBodyRow title="Description" content={description} />
         <CardBodyRow title="Created at" content={String(createdAt)} />
         <CardBodyRow title="Card Number" content={String(bizNumber)} />

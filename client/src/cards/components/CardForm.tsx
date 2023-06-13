@@ -18,7 +18,7 @@ type Props = {
   onInputChange: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
-const UserForm: FC<Props> = ({
+const CardForm: FC<Props> = ({
   onSubmit,
   onReset,
   onFormChange,
@@ -161,7 +161,7 @@ const UserForm: FC<Props> = ({
   );
 };
 
-export default React.memo(UserForm);
+export default React.memo(CardForm);
 
 // import React, { ChangeEvent, FC } from "react";
 // import Form from "../../forms/components/Form";

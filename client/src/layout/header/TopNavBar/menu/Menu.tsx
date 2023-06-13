@@ -82,12 +82,6 @@ const Menu: React.FC<Props> = ({ isOpen, anchorEl, onClose }) => {
               onClick={onClose}
             />
             <MenuLink
-              label="profile"
-              navigateTo={ROUTES.USER_PROFILE}
-              onClick={onClose}
-            />
-
-            <MenuLink
               label="edit account"
               navigateTo={ROUTES.EDIT_USER}
               onClick={onClose}
