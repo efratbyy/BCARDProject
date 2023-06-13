@@ -16,8 +16,8 @@ const mapCardToModel = (card: CardInterface): CardMapToModelType => {
     country: card.address.country,
     city: card.address.city,
     street: card.address.street,
-    houseNumber: String(card.address.houseNumber!),
-    zip: String(card.address.zip!),
+    houseNumber: card.address.houseNumber!,
+    zip: card.address.zip!,
     user_id: card.user_id,
     bizNumber: card.bizNumber,
   };
@@ -44,8 +44,8 @@ export default mapCardToModel;
 //     country: card.address.country,
 //     city: card.address.city,
 //     street: card.address.street,
-//     houseNumber: String(card.address.houseNumber!),
-//     zip: String(card.address.zip!),
+//     houseNumber: card.address.houseNumber!,
+//     zip: card.address.zip!,
 //     user_id: card.user_id,
 //     bizNumber: card.bizNumber,
 //   };

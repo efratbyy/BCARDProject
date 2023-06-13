@@ -11,8 +11,8 @@ const initialCreateCard = {
   country: "",
   city: "",
   street: "",
-  houseNumber: "",
-  zip: "",
+  houseNumber: 0,
+  zip: 0,
 };
 
 export default initialCreateCard;

@@ -21,8 +21,8 @@ export type CardFromClientType = {
   country: string;
   city: string;
   street: string;
-  houseNumber: string;
-  zip: string;
+  houseNumber: number;
+  zip: number;
 };
 
 export type CardMapToModelType = {
@@ -39,8 +39,8 @@ export type CardMapToModelType = {
   country: string;
   city: string;
   street: string;
-  houseNumber: string;
-  zip: string;
+  houseNumber: number;
+  zip: number;
   user_id: string;
   bizNumber: number;
 };

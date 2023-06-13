@@ -1,6 +1,12 @@
 // זהו הצינור בין צד לקוח לצד שרת לשליחת בקשות
 import axios from "axios";
-import UserType, { LoginType, UserRegistered } from "../models/types/userTypes";
+import UserType, {
+  LoginType,
+  NormalizedEditUser,
+  UserRegistered,
+} from "../models/types/userTypes";
+import { NormalizedEditCard } from "../../cards/models/types/cardTypes";
+import UserInterface from "../models/interfaces/UserInterface";
 
 // קומפוננטה לייצור בקשות לשרת
 
@@ -30,6 +36,32 @@ export const signup = async (normalizedUser: UserType) => {
     return Promise.resolve(data); // זה אובייקט התשובה שחוזר מהשרת data
     // :זה אובייקט התשובה שחוזר מהשרת והוא יראה כך data
     // name: { first: string; middle?: string; last: string; _id?: string; };email: string; _id: string;}
+  } catch (error) {
+    if (axios.isAxiosError(error)) return Promise.reject(error.message);
+    return Promise.reject("An unexpected error occurred!");
+  }
+};
+
+export const getUserFromServer = async (userId: string) => {
+  try {
+    const { data } = await axios.get<UserInterface>(
+      `${apiUrl}/users/${userId}`
+    );
+    return Promise.resolve(data);
+  } catch (error) {
+    if (axios.isAxiosError(error)) return Promise.reject(error.message);
+    return Promise.reject("An unexpected error occurred!");
+  }
+};
+
+export const editUser = async (normalizedUser: NormalizedEditUser) => {
+  try {
+    const userToServer = { ...normalizedUser };
+    const { data } = await axios.put<UserInterface>(
+      `${apiUrl}/users/${normalizedUser._id}`,
+      userToServer
+    );
+    return Promise.resolve(data);
   } catch (error) {
     if (axios.isAxiosError(error)) return Promise.reject(error.message);
     return Promise.reject("An unexpected error occurred!");

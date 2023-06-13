@@ -80,6 +80,7 @@ import MuiStack from "../sandbox/mui-sandbox/layout/MuiStack";
 import CardEditPage from "../cards/pages/CardEditPage";
 import { MyCardsPage } from "../cards/pages/MyCardsPage";
 import CardFavPage from "../pages/CardFavPage";
+import { EditUserPage } from "../users/pages/EditUserPage";
 
 const Router = () => {
   // הוא להסתכל על שורת הכתובות ולפיה להראות את הקומפוננטה המבוקשת Router-תפקידו של ה
@@ -111,6 +112,7 @@ const Router = () => {
         path={`${ROUTES.MY_CARDS}/:cardId/${ROUTES.EDIT_CARD}/:cardId`}
         element={<CardEditPage />}
       />
+      <Route path={`${ROUTES.EDIT_USER}/userId`} element={<EditUserPage />} />
       <Route path={`${ROUTES.EDIT_CARD}/:cardId`} element={<CardEditPage />} />
       <Route path={ROUTES.ABOUT} element={<AboutPage />} />
       <Route path={ROUTES.SIGNUP} element={<SignupPage />} />

@@ -43,6 +43,50 @@ export type RegisterType = {
   isBusiness: boolean;
 };
 
+export type UserMapToModelType = {
+  _id: string;
+  first: string;
+  middle: string;
+  last: string;
+  phone: string;
+  email: string;
+  password: string;
+  url: string;
+  alt: string;
+  state: string;
+  country: string;
+  city: string;
+  street: string;
+  houseNumber: number;
+  zip: number;
+  isBusiness: boolean;
+};
+
+export type NormalizedEditUser = {
+  _id?: string;
+  name: {
+    first: string;
+    middle: string;
+    last: string;
+  };
+  phone: string;
+  email: string;
+  password: string;
+  image: {
+    url: string;
+    alt: string;
+  };
+  address: {
+    state: string;
+    country: string;
+    city: string;
+    street: string;
+    houseNumber: number;
+    zip: number;
+  };
+  isBusiness: boolean;
+};
+
 export type RegistrationFormErrors = Partial<RegisterType>;
 
 export type UserRegistered = {
