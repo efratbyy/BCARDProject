@@ -49,6 +49,10 @@ const useForm = <TForm extends Record<string, unknown>>(
   const validateForm = useCallback(() => {
     const schemaForValidate = Joi.object(schema);
     const { error } = schemaForValidate.validate(data);
+    console.log(schema);
+    console.log(schemaForValidate);
+    console.log(data);
+    console.log(error);
     if (error) return error;
     return null;
   }, [schema, data]);

@@ -11,7 +11,6 @@ type CardsPageProps = {};
 
 const CardsPage: React.FC<CardsPageProps> = () => {
   const { user } = useUser();
-  if (!user) return <Navigate replace to={ROUTES.LOGIN} />;
 
   const {
     value,
@@ -29,6 +28,7 @@ const CardsPage: React.FC<CardsPageProps> = () => {
     await handleDeleteCard(cardId);
     await handleGetCards();
   };
+  if (!user) return <Navigate replace to={ROUTES.LOGIN} />;
 
   return (
     <Container>

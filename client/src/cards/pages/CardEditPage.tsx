@@ -24,13 +24,8 @@ const CardEditPage = () => {
   );
 
   const { data, errors } = value;
-  const {
-    handleInputChange,
-    handleReset,
-    onSubmit,
-    setData,
-    validateForm,
-  } = rest;
+  const { handleInputChange, handleReset, onSubmit, setData, validateForm } =
+    rest;
 
   useEffect(() => {
     if (cardId)

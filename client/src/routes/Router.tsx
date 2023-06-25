@@ -112,7 +112,7 @@ const Router = () => {
         path={`${ROUTES.MY_CARDS}/:cardId/${ROUTES.EDIT_CARD}/:cardId`}
         element={<CardEditPage />}
       />
-      <Route path={`${ROUTES.EDIT_USER}/userId`} element={<EditUserPage />} />
+      <Route path={`${ROUTES.EDIT_USER}/:userId`} element={<EditUserPage />} />
       <Route path={`${ROUTES.EDIT_CARD}/:cardId`} element={<CardEditPage />} />
       <Route path={ROUTES.ABOUT} element={<AboutPage />} />
       <Route path={ROUTES.SIGNUP} element={<SignupPage />} />
@@ -120,8 +120,6 @@ const Router = () => {
       <Route path={ROUTES.MY_CARDS} element={<MyCardsPage />} />
       <Route path={ROUTES.FAV_CARDS} element={<CardFavPage />} />
       <Route path={ROUTES.CREATE_CARD} element={<CreateCardPage />} />
-      {/* <Route path={`${ROUTES.EDIT_CARD}/:cardId`} element={<CardEditPage />} /> */}
-
       <Route path={ROUTES.SANDBOX} element={<SandboxMenu />}>
         <Route path={SANDBOX_ROUTES.COMPONENT} element={<ComponentMenu />}>
           <Route path={SANDBOX_ROUTES.LOGIC} element={<Logic />} />

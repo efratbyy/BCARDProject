@@ -6,6 +6,7 @@ import MenuLink from "./MenuLink";
 import { useUser } from "../../../../users/providers/UserProvider";
 import useHandleUsers from "../../../../users/hooks/useHandleUsers";
 import ROUTES from "../../../../routes/routesModel";
+import { useParams } from "react-router-dom";
 
 type Props = {
   isOpen: boolean;
@@ -16,6 +17,7 @@ type Props = {
 const Menu: React.FC<Props> = ({ isOpen, anchorEl, onClose }) => {
   const { user } = useUser();
   const { handleLogout } = useHandleUsers();
+  const { userId } = useParams();
 
   const onLogout = () => {
     handleLogout();
@@ -83,7 +85,7 @@ const Menu: React.FC<Props> = ({ isOpen, anchorEl, onClose }) => {
             />
             <MenuLink
               label="edit account"
-              navigateTo={ROUTES.EDIT_USER}
+              navigateTo={`${ROUTES.EDIT_USER}/:id`}
               onClick={onClose}
             />
 

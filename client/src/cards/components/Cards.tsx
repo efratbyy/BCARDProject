@@ -12,7 +12,7 @@ type Props = {
 const Cards: React.FC<Props> = ({ cards, onDelete, onLike }) => {
   return (
     <Grid container spacing={2} pb={2}>
-      {cards.map((card, _id) => (
+      {cards.map((card: CardInterface) => (
         <Grid item key={card._id} xs={12} sm={6} md={6} lg={4}>
           <Card card={card} onDelete={onDelete} onLike={onLike} />
         </Grid>

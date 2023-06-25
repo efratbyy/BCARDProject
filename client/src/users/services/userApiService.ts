@@ -5,7 +5,6 @@ import UserType, {
   NormalizedEditUser,
   UserRegistered,
 } from "../models/types/userTypes";
-import { NormalizedEditCard } from "../../cards/models/types/cardTypes";
 import UserInterface from "../models/interfaces/UserInterface";
 
 // קומפוננטה לייצור בקשות לשרת

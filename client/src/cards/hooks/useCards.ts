@@ -108,7 +108,6 @@ const useCards = () => {
         const cardFomServer = await editCard(normalizedCard);
         requestStatus(false, null, null, cardFomServer);
         snack("success", "The business card has been successfully updated");
-        console.log(cardFomServer);
         navigate(ROUTES.MY_CARDS);
       } catch (error) {
         if (typeof error === "string") requestStatus(false, error, null);
