@@ -28,8 +28,6 @@ const SetPost = () => {
   const [post, setPost] = useState(INITIAL_POST);
   const [posts, setPosts] = useState<Post[] | []>([]);
 
-  console.log(isLogged);
-
   type Event = MouseEvent<HTMLButtonElement>;
 
   const createNewPost = (e: Event) => {

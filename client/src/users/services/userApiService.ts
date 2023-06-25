@@ -56,8 +56,9 @@ export const getUserFromServer = async (userId: string) => {
 export const editUser = async (normalizedUser: NormalizedEditUser) => {
   try {
     const userToServer = { ...normalizedUser };
+    console.log(userToServer);
     const { data } = await axios.put<UserInterface>(
-      `${apiUrl}/users/${normalizedUser._id}`,
+      `${apiUrl}/users/${userToServer._id}`,
       userToServer
     );
     return Promise.resolve(data);

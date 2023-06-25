@@ -1,7 +1,7 @@
 const DB = process.env.DB || "MONGODB";
 const User = require("./mongodb/User");
 const lodash = require("lodash");
-const { comparePassword } = require("../helpers/bcrypt");
+const { comparePassword, generateUserPassword } = require("../helpers/bcrypt");
 const { generateAuthToken } = require("../../auth/Providers/jwt");
 const { handleBadRequest } = require("../../utils/handleErrors");
 
@@ -79,7 +79,11 @@ const getUser = async (userId) => {
 const updateUser = async (userId, normalizedUser) => {
   if (DB === "MONGODB") {
     try {
-      return Promise.resolve({ normalizedUser, userId });
+      normalizedUser.password = generateUserPassword(normalizedUser.password);
+      const user = await User.findByIdAndUpdate(userId, normalizedUser, {
+        new: true,
+      });
+      return Promise.resolve(user);
     } catch (error) {
       error.status = 400;
       return Promise.reject(error);

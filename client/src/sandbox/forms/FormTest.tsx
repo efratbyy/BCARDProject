@@ -14,18 +14,13 @@ export const FormTest = () => {
 
   // מה שהכניס המשתמש בשדות) ומדפיסה אותו לקונסול) data מקבלת אובייקט של
   const handleSubmit = (data: Data) => {
-    console.log(data);
     handleReset(); // לאחר שליחת הטופס זה מאפס את השדות של הטופס ונועל את הכפתור
   };
 
   //העברת אובייקט עם כל המפתחות והוולידציות שארצה לעשות לכל שדה (זו לא הפעלה של הוולידציה אלא רק היצירה שלה)
   const SCHEMA = {
-    first: Joi.string()
-      .min(2)
-      .required(),
-    last: Joi.string()
-      .min(2)
-      .required(),
+    first: Joi.string().min(2).required(),
+    last: Joi.string().min(2).required(),
   };
 
   //קובע שהערך הראשוני של השדות יהיה ריק

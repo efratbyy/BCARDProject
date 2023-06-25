@@ -23,15 +23,23 @@ export const EditUserPage = () => {
   const { handleInputChange, handleReset, onSubmit, validateForm, setData } =
     rest;
 
+  const handleMySubmit = () => {
+    console.log(data);
+    if (user) {
+      const b = { _id: user._id };
+      handelUpdateUser({ ...b, ...data });
+    }
+  };
+
   useEffect(() => {
+    console.log;
+    console.log(user);
     if (user)
       handleGetUser(user._id).then((userFromServer) => {
-        if (user && user._id !== userFromServer!._id)
+        if (userFromServer && user && user._id !== userFromServer!._id)
           return navigate(ROUTES.ROOT);
         if (userFromServer) {
-          console.log(userFromServer);
           const modeledUser = mapUserToModel(userFromServer);
-          console.log(modeledUser);
           setData(modeledUser);
         }
       });
@@ -50,7 +58,8 @@ export const EditUserPage = () => {
     >
       <UserForm
         title="edit account"
-        onSubmit={onSubmit}
+        // onSubmit={onSubmit}
+        onSubmit={handleMySubmit}
         onReset={handleReset}
         errors={errors}
         onFormChange={validateForm}
