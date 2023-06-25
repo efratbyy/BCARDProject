@@ -4,9 +4,9 @@ import { UserMapToModelType } from "../../models/types/userTypes";
 const mapUserToModel = (user: UserInterface): UserMapToModelType => {
   return {
     _id: user._id,
-    first: user.first,
-    middle: user.middle,
-    last: user.last,
+    first: user.name.first,
+    middle: user.name.middle,
+    last: user.name.last,
     phone: user.phone,
     email: user.email,
     password: user.password,

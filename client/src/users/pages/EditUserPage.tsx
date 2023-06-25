@@ -20,13 +20,8 @@ export const EditUserPage = () => {
     handelUpdateUser
   );
   const { data, errors } = value;
-  const {
-    handleInputChange,
-    handleReset,
-    onSubmit,
-    validateForm,
-    setData,
-  } = rest;
+  const { handleInputChange, handleReset, onSubmit, validateForm, setData } =
+    rest;
 
   useEffect(() => {
     if (user)
@@ -34,7 +29,9 @@ export const EditUserPage = () => {
         if (user && user._id !== userFromServer!._id)
           return navigate(ROUTES.ROOT);
         if (userFromServer) {
+          console.log(userFromServer);
           const modeledUser = mapUserToModel(userFromServer);
+          console.log(modeledUser);
           setData(modeledUser);
         }
       });

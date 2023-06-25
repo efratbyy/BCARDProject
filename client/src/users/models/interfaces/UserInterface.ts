@@ -1,11 +1,13 @@
 import ImageInterface from "./ImageInterface";
 import AddressInterface from "./AddressInterface";
+import NameInterface from "./NameInterface";
 
 interface UserInterface {
   _id: string;
-  first: string;
-  middle: string;
-  last: string;
+  name: NameInterface;
+  // first: string;
+  // middle: string;
+  // last: string;
   phone: string;
   email: string;
   password: string;
