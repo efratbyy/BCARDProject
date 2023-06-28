@@ -28,18 +28,20 @@ export const EditUserPage = () => {
     if (user) {
       const b = { _id: user._id };
       handelUpdateUser({ ...b, ...data });
+      return navigate(ROUTES.ROOT);
     }
   };
 
   useEffect(() => {
-    console.log;
-    console.log(user);
     if (user)
       handleGetUser(user._id).then((userFromServer) => {
         if (userFromServer && user && user._id !== userFromServer!._id)
           return navigate(ROUTES.ROOT);
         if (userFromServer) {
+          console.log(userFromServer);
           const modeledUser = mapUserToModel(userFromServer);
+          console.log(modeledUser);
+
           setData(modeledUser);
         }
       });

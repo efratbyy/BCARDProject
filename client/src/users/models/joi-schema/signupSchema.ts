@@ -4,18 +4,9 @@ const signupSchema = {
   // כל הוולידציות של כל המפתחות
   // במידה והאובייקט עובר את כל הוולידציות פה בצד לקוח הוא גם יעבור את הוולידציות בצד שרת
   // רוצה לקבל את זה useForm.js הסכמה מותאמת לאיך שה
-  first: Joi.string()
-    .min(2)
-    .max(256)
-    .required(),
-  middle: Joi.string()
-    .min(2)
-    .max(256)
-    .allow(""),
-  last: Joi.string()
-    .min(2)
-    .max(256)
-    .required(),
+  first: Joi.string().min(2).max(256).required(),
+  middle: Joi.string().min(2).max(256).allow(""),
+  last: Joi.string().min(2).max(256).required(),
   phone: Joi.string()
     .ruleset.regex(/0[0-9]{1,2}-?\s?[0-9]{3}\s?[0-9]{4}/)
     .rule({ message: 'user "phone" must be a valid phone number' })
@@ -39,24 +30,12 @@ const signupSchema = {
     )
     .rule({ message: "user image must be a valid url" })
     .allow(""),
-  alt: Joi.string()
-    .min(2)
-    .max(256)
-    .allow(""),
+  alt: Joi.string().min(2).max(256).allow(""),
   state: Joi.string().allow(""),
-  country: Joi.string()
-    .min(2)
-    .max(256)
-    .required(),
-  city: Joi.string()
-    .min(2)
-    .max(256)
-    .required(),
-  street: Joi.string()
-    .min(2)
-    .max(256)
-    .required(),
-  houseNumber: Joi.number().required(),
+  country: Joi.string().min(2).max(256).required(),
+  city: Joi.string().min(2).max(256).required(),
+  street: Joi.string().min(2).max(256).required(),
+  houseNumber: Joi.number().min(1).required(),
   zip: Joi.number(),
   isBusiness: Joi.boolean().required(),
 };

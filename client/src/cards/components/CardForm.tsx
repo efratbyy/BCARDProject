@@ -156,6 +156,7 @@ const CardForm: FC<Props> = ({
         onInputChange={onInputChange}
         data={data}
         breakPoints={{ sm: 6 }}
+        required={false}
       />
     </Form>
   );

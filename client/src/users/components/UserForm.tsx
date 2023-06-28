@@ -172,7 +172,7 @@ const UserForm: FC<Props> = ({
           name="isBusiness"
           control={
             <Checkbox
-              value={data.isBusiness}
+              checked={data.isBusiness}
               color="primary"
               // isBusiness בערך data שלו מתקבל מהאובייקט של value הצ׳ק בוקס שה
               onChange={
@@ -187,7 +187,7 @@ const UserForm: FC<Props> = ({
               }
             />
           }
-          label="Signup as business" // הכיתוב שיופיע ליד הצ׳אק בוקס
+          label="Signup as Business" // הכיתוב שיופיע ליד הצ׳אק בוקס
         />
       </Grid>
       <FormLink text="Already registered?" to={ROUTES.LOGIN} />
