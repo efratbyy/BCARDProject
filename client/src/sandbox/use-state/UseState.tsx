@@ -14,14 +14,11 @@ const UseState = () => {
     <div style={{ padding: 16, backgroundColor: "#999" }}>
       <p>{counter}</p>
 
-      {
-        // שתי הדוגמאות למטה יתתנו תוצאה דומה אך עלולות ליצור באגים ולכן אין להשתמש בדרכים אלו!!
-        /* <button
+      {/* <button
         style={{ padding: 2, margin: 1 }}
         onClick={() => setCounter((counter = counter + 1))}>
         +
-      </button> */
-      }
+      </button> */}
 
       {/* <button
         style={{ padding: 2, margin: 1 }}

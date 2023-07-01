@@ -14,28 +14,12 @@ const SignupPage = () => {
   const { handleSignup } = useHandleUsers();
 
   const { value, ...rest } = useForm(
-    // פונקציה שאחראית על ההתחברות
     initialSignupForm,
     signupSchema,
     handleSignup
   );
 
-  // const { data, errors } = value;
-  // // זה אובייקט התשובה שחוזר מהשרת data
-  // // זה במידה ויש שגיאה זו ההודעה שתחזור מהשרת errors
-  // const {
-  //   handleInputChange,
-  //   handleReset,
-  //   onSubmit,
-  //   validateForm,
-  //   setData,
-  // } = rest; // המטודות שיטפלו בטופס רישום המשתמש
-
-  // במידה והמשתמש מחובר הוא יועבר לדף הכרטיסים
   if (user) return <Navigate replace to={ROUTES.CARDS} />;
-  // -לא מאפשר למשתמש לחזור דף אחורה replace
-  // במידה והעביר את המשתמש לדף הכרטיסים כי הוא כבר ביצע כניסה לאתר הוא לא יאפשר לו לחזור לעמוד הקודם
-  // SignupPage במידה והמשתמש לא מחובר הוא יועבר לדף
 
   return (
     <Container
@@ -52,7 +36,7 @@ const SignupPage = () => {
         onReset={rest.handleReset}
         onFormChange={rest.validateForm}
         onInputChange={rest.handleInputChange}
-        data={value.data} // const data: {_id: string; isBusiness: boolean; isAdmin: boolean}
+        data={value.data}
         errors={value.errors}
         setData={rest.setData}
       />

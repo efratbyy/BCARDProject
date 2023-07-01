@@ -1,10 +1,7 @@
 import { RegisterType } from "../../models/types/userTypes";
 
 const normalizeUser = (user: RegisterType) => {
-  // פונקציה שאחראית לנרמל את האובייקט (תתאים את האובייקט לאיך שצד שרת מצפה לקבל אותו)
-  // מסויים user היא מקבלת אובייקט שמייצג
   return {
-    // הפונקציה תחזיר אובייט שמותאים לדרישות של השרת
     name: {
       first: user.first,
       middle: user.middle,

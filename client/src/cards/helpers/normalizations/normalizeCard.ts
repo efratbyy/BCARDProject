@@ -1,6 +1,5 @@
 import { CardFromClientType } from "../../models/types/cardTypes";
 
-// פונקציה שמקבלת כרטיס מסוג של אובייקט ומחזירה אובייקט מנורמל כפי שהשרת מצפה לקבל
 const normalizeCard = (card: CardFromClientType) => {
   return {
     title: card.title,

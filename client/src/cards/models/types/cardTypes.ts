@@ -70,4 +70,3 @@ export type NormalizedEditCard = {
 };
 
 export type CreateCardErrors = Partial<CardFromClientType>;
-// שמוגדר למעלה CardFromClientType קובע שהטייפ הוא מסוג

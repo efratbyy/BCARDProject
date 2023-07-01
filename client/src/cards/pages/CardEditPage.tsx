@@ -32,7 +32,7 @@ const CardEditPage = () => {
       handleGetCard(cardId).then((cardFromServer) => {
         if (user && user._id !== cardFromServer!.user_id)
           return navigate(ROUTES.ROOT);
-        const modeledCard = mapCardToModel(cardFromServer!); // הפיכת כל המפתחות בכרטיס לרמה הראשונה
+        const modeledCard = mapCardToModel(cardFromServer!);
         setData(modeledCard);
       });
   }, [cardId]);

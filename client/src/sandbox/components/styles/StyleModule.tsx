@@ -2,7 +2,6 @@ import React from "react";
 import "./styleModule.css";
 
 const StyleModule = () => {
-  //עיצוב בעזרת שימוש בקובץ חיצוני (styleModule.css)
   return (
     <>
       <div className="red">StyleModule</div>

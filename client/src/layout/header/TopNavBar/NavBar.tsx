@@ -24,33 +24,3 @@ export const NavBar = () => {
     </MenuProvider>
   );
 };
-
-// import React from "react";
-// import AppBar from "@mui/material/AppBar";
-// import Toolbar from "@mui/material/Toolbar";
-// import Box from "@mui/material/Box";
-// import LeftNavBar from "./left-navigation/LeftNavBar";
-// import RightNavBar from "./right-navigation/RightNavBar";
-// import SearchBar from "./search-bar/SearchBar";
-// import { MenuProvider } from "./menu/MenuProvider";
-
-// export const NavBar = () => {
-//   return (
-//     // קומפוננטה שאחראית על סרגל הכלים העליון
-//     <MenuProvider
-//     // יוכלו להשפיע האם תפריט הניווט יוצג או לא NavBar ע״מ שכל קומפוננטה שבתוך MenuProvider-עוטפים את תפריט הניווט ב
-//     >
-//       <AppBar position="sticky">
-//         <Toolbar sx={{ justifyContent: "space-between" }}>
-//           <LeftNavBar />
-
-//           <Box sx={{ display: { xs: "inline-flex", md: "none" } }}>
-//             <SearchBar />
-//           </Box>
-
-//           <RightNavBar />
-//         </Toolbar>
-//       </AppBar>
-//     </MenuProvider>
-//   );
-// };

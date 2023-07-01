@@ -1,9 +1,6 @@
 import Joi from "joi";
 
 const signupSchema = {
-  // כל הוולידציות של כל המפתחות
-  // במידה והאובייקט עובר את כל הוולידציות פה בצד לקוח הוא גם יעבור את הוולידציות בצד שרת
-  // רוצה לקבל את זה useForm.js הסכמה מותאמת לאיך שה
   first: Joi.string().min(2).max(256).required(),
   middle: Joi.string().min(2).max(256).allow(""),
   last: Joi.string().min(2).max(256).required(),

@@ -3,7 +3,6 @@ import Typography from "@mui/material/Typography";
 import NavBarLink from "../../../components/NavBarLink";
 import ROUTES from "../../../../routes/routesModel";
 
-// הלוגו שמופיע מצד שמאל של תפריט הניווט שיופיע רק במסכים בינוניים ומעלה
 const Logo = () => {
   return (
     <NavBarLink to={ROUTES.ROOT}>

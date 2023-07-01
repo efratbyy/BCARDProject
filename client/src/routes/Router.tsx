@@ -83,21 +83,12 @@ import CardFavPage from "../pages/CardFavPage";
 import { EditUserPage } from "../users/pages/EditUserPage";
 
 const Router = () => {
-  // הוא להסתכל על שורת הכתובות ולפיה להראות את הקומפוננטה המבוקשת Router-תפקידו של ה
   return (
-    // קומפוננטה שמנהלת את התצוגה של הדפים
     <Routes>
       <Route path={ROUTES.ROOT} element={<CardsPage />} />
       <Route path={ROUTES.CARDS} element={<CardsPage />} />
       <Route
-        path={`${ROUTES.CARD_DETAILS}/:cardId`} // Card שורה זו משפיעה על שורה 30 בקומפוננטה
-        // פה קובעת את המפתחות
-        // כאן כתוב מה מצפה לקבל בשורת הכתובת
-        // של אחד הכרטיסים id שיהיה cardId השרת מצפה למפתח אחד בשם
-        // params-מידע שיגיע מאובייקט ה
-        // params-ופה אני קובעת איך יקראו המפתחות שבאובייקט ה params-זה שם המפתח ב cardId
-        // ואת הערך יקבל משורת הכתובת params-וזה סימן שצריך לייצר אובייקט של ה params-הנקודותיים זה סימן למפתחות מה :
-        // יהיו 2 מפתחות params-אז באובייקט ה /:cardId במידה ואוסיף /: נוסף אחרי
+        path={`${ROUTES.CARD_DETAILS}/:cardId`}
         element={<CardDetailsPage />}
       />
       <Route

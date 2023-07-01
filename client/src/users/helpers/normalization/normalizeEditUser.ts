@@ -1,4 +1,4 @@
-import { RegisterType, UserMapToModelType } from "../../models/types/userTypes";
+import { UserMapToModelType } from "../../models/types/userTypes";
 
 const normalizeEditUser = (user: UserMapToModelType) => {
   return {

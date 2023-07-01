@@ -12,8 +12,6 @@ const UseEffectAsComponentDidUpdate = () => {
   useEffect(() => {
     colorLog("In useEffect", "#2d65ff");
   }, [count]);
-  // כאשר יש משתנה בתוך הסוגריים המרובעים זה אומר שהפונקציה תפעל שוב בכל פעם שיהיה שינוי במשתנה
-  // useEffect היא תפעיל שוב רק את
 
   return (
     <div>

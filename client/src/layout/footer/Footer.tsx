@@ -16,7 +16,6 @@ const Footer = () => {
   return (
     <Paper
       sx={{ position: "sticky", bottom: 0, left: 0, right: 0 }}
-      // Umi של Paper קובע את רמת ההצללה של הדף בקומפוננטת  elevation
       elevation={3}
     >
       <BottomNavigation showLabels>

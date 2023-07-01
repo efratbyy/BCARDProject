@@ -11,12 +11,8 @@ const LeftNavBar = () => {
 
   return (
     <Box>
-      <LogoIcon
-      // הלוגו שמופיע מצד שמאל של תפריט הניווט שיופיע רק במסכים בינוניים ומעלה
-      />
-      <Logo
-      // הלוגו שמופיע מצד שמאל של תפריט הניווט שיופיע רק במסכים קטנים
-      />
+      <LogoIcon />
+      <Logo />
 
       <Box sx={{ display: { xs: "none", md: "inline-flex" } }}>
         <NavItem label="about" to={ROUTES.ABOUT} />

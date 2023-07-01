@@ -8,14 +8,11 @@ const UseEffectAsComponentWillUnmount = () => {
     colorLog("In useEffect", "#2d65ff");
 
     const int = setInterval(() => {
-      // פונקציה א-סינכרונית שתפעל בלי סוף עד שאעצור אותה
       setCount((prev) => prev + 1);
     }, 2000);
 
     return () => {
-      // יקרה רגע לפני שהקומפוננטה מתחסלת return-כל מה שיקרה ב
-      // האזנה לרגע שבו הפונקציה מתחסלת (מעבר לקומפוננטה אחרת) והפעלת פונקציה שתראה בקונסול את הרגע שבו התחסלה
-      clearInterval(int); // setInterval עצירת הפונקציה
+      clearInterval(int);
       colorLog("In useEffect return", "lightgreen");
     };
   }, []);

@@ -34,7 +34,7 @@ const CardFavPage = () => {
   return (
     <Container>
       <PageHeader
-        title="Favorite Cards Page"
+        title="My Favorite Cards Page"
         subtitle="Here you can find all your favorite business cards"
       />
 

@@ -12,19 +12,16 @@ import FormLink from "../../forms/components/FormLink";
 import { useUser } from "../providers/UserProvider";
 
 const LoginPage = () => {
-  const { user } = useUser(); // UserProvider.ts-מ
-  // // UserProvider/Context מטודה שבעזרתה נוכל לצרוך את התוכן של
+  const { user } = useUser();
   const { handleLogin } = useHandleUsers();
 
   const { value, ...rest } = useForm(
-    // פונקציה שאחראית על ההתחברות
     initialLoginForm,
     loginSchema,
     handleLogin
   );
 
   if (user) return <Navigate to={ROUTES.ROOT} />;
-  // כלומר המשתמש כבר מחובר אז נעביר אותו לדף הכרטיסים ,UserProvider-שייבאנו מ user-התניה שאומרת שאם יש ערך ל
 
   return (
     <Container
@@ -37,27 +34,26 @@ const LoginPage = () => {
     >
       <Form
         title="login"
-        onSubmit={rest.onSubmit} // אשר תופעל כאשר המשתמש ילחץ לשליחת הטופס useForm-שחילצנו מ onSubmit
-        onReset={rest.handleReset} // cancel-אשר תופעל כאשר המשתמש ילחץ על כפתור ה useForm-שחילצנו מ handleReset
+        onSubmit={rest.onSubmit}
+        onReset={rest.handleReset}
         styles={{ maxWidth: "450px" }}
         spacing={1}
-        onFormChange={rest.validateForm} // אשר אחראי האם הכפתור ישוחרר או לא useForm-שחילצנו מ validateForm
+        onFormChange={rest.validateForm}
         to={ROUTES.CARDS}
       >
         <Input
           label="email"
           name="email"
-          type="email" // בטלפונים יפתח מקלדת שמתאימה לאימייל
-          data={value.data} // const data: {email: string; password: string;}
+          type="email"
+          data={value.data}
           error={value.errors.email}
-          onInputChange={rest.handleInputChange} // מטודה שתופעל בכל הקלדה של המשתמש באינפוט
+          onInputChange={rest.handleInputChange}
         />
         <Input
           label="password"
           name="password"
-          type="password" // בטלפונים יפתח מקלדת שמתאימה
-          // יסיר את הסיסמא בעיגולים שחורים שלא ניתן לראות אותה
-          data={value.data} // const data: {email: string; password: string;}
+          type="password"
+          data={value.data}
           error={value.errors.password}
           onInputChange={rest.handleInputChange}
         />

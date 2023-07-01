@@ -20,28 +20,3 @@ const NavItem: React.FC<Props> = ({ label, to, color }) => {
 };
 
 export default NavItem;
-
-// import React from "react";
-// import Typography from "@mui/material/Typography";
-// import Button from "@mui/material/Button";
-// import NavBarLink from "./NavBarLink";
-
-// type Props = {
-//   label: string;
-//   to: string;
-//   color?: string;
-// };
-
-// const NavItem: React.FC<Props> = ({ label, to, color }) => {
-//   return (
-//     // NavBarLink קופמפוננטה שמשתמשת בפונקציונליות של
-//     // העמוד שאליו יועבר to-נכניס את הכיתוב שיופיע על הכפתור וב label-יוצרת כפתור אוניברסלי שב
-//     <NavBarLink to={to} color={color}>
-//       <Button color="inherit">
-//         <Typography>{label}</Typography>
-//       </Button>
-//     </NavBarLink>
-//   );
-// };
-
-// export default NavItem;

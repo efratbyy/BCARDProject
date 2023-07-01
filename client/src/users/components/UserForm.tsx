@@ -34,21 +34,20 @@ const UserForm: FC<Props> = ({
   setData,
 }) => {
   return (
-    <Form // :יקבל Form השדות ש
-      onSubmit={onSubmit} // והטופס ישלח submit מטודה שתפעל כאשר המשתמש ילחץ על הכפתור
-      onReset={onReset} // מטודה שתאפס את שדות התופס לריקים
+    <Form
+      onSubmit={onSubmit}
+      onReset={onReset}
       onFormChange={onFormChange}
-      // submit מטודה שתופעל כאשר יהיה שינוי בכל שדות האינפוט ואז ישתחרר הכפתור
       styles={{ maxWidth: "800px" }}
-      title={title} // form הכותרת ב
-      to={ROUTES.CARDS} // הדף שאליו יועבר המשתמש אחרי שהטופס ישלח
+      title={title}
+      to={ROUTES.CARDS}
     >
       <Input
         name="first"
         label="first name"
-        error={errors.first} // אותם הודעות שגיאה שיופיעו מתחת לשדה ויצבעו אותו באדום
-        onInputChange={onInputChange} // מטודה שתופעל כאשר יהיה שינוי בשדה הספציפי
-        data={data} // (user או card) data מייצר שדה באובייקט של
+        error={errors.first}
+        onInputChange={onInputChange}
+        data={data}
         breakPoints={{ sm: 6 }}
       />
       <Input
@@ -58,9 +57,7 @@ const UserForm: FC<Props> = ({
         onInputChange={onInputChange}
         data={data}
         breakPoints={{ sm: 6 }}
-        required={false} // במידה וזה לא שדה חובה לא ארצה שתופיע * ולכן אוסיף שורה זו
-        // * ותופיע required={true} במידה ולא מוסיפה שורה אז ברירת המחדל היא
-        // defaultProps בחלק של ה Input קבענו את זה בקומפוננטה
+        required={false}
       />
       <Input
         name="last"
@@ -167,27 +164,18 @@ const UserForm: FC<Props> = ({
         required={false}
       />
       <Grid item>
-        <FormControlLabel // MUI או לא - קומפוננטה של isBusiness הקובייה שבה יסמן המשתמש אם הוא
-          // initialSignupForm בצ׳אק בוקס. את זה הגדרנו בקומפוננטה V ברירת המחדל היא שמשתמש הוא לא ביזנס אלא אם סימן
+        <FormControlLabel
           name="isBusiness"
           control={
             <Checkbox
               checked={data.isBusiness}
               color="primary"
-              // isBusiness בערך data שלו מתקבל מהאובייקט של value הצ׳ק בוקס שה
-              onChange={
-                (e) =>
-                  // בצ׳אק בוקס V המטודה שתופעל כאשר יסמנו
-                  // V זה האירוע של הסימון ב e
-                  setData({ ...data, isBusiness: !!e.target.checked })
-                // data-כי בעצם העתקתי את ה isBusiness ב V לא ימחקו לי כל השדות שמלאתי בטופס כאשר אסמן ...data בזכות
-                // !!e.target.checked-ולתת לא ערך חדש שאותו יקבל מ isBusiness אחכ אמרתי לו ללכת למפתח הספציפי
-                // false ובמידה ולא יהיה true הופך לערך בוליאני. במידה ומסומן יהיה - !!e.target.checked
-                // יש לו באירוע האם סימנו אותו או לא Checkbox-ב
+              onChange={(e) =>
+                setData({ ...data, isBusiness: !!e.target.checked })
               }
             />
           }
-          label="Signup as Business" // הכיתוב שיופיע ליד הצ׳אק בוקס
+          label="Signup as Business"
         />
       </Grid>
       <FormLink text="Already registered?" to={ROUTES.LOGIN} />

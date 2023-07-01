@@ -11,7 +11,7 @@ import userEditSchema from "../models/joi-schema/userEditSchema";
 import mapUserToModel from "../helpers/normalization/mapUserToModel";
 
 export const EditUserPage = () => {
-  const { user, token } = useUser();
+  const { user } = useUser();
   const { handleGetUser, handelUpdateUser } = useHandleUsers();
   const navigate = useNavigate();
   const { value, ...rest } = useForm(
@@ -24,7 +24,6 @@ export const EditUserPage = () => {
     rest;
 
   const handleMySubmit = () => {
-    console.log(data);
     if (user) {
       const b = { _id: user._id };
       handelUpdateUser({ ...b, ...data });
@@ -38,9 +37,7 @@ export const EditUserPage = () => {
         if (userFromServer && user && user._id !== userFromServer!._id)
           return navigate(ROUTES.ROOT);
         if (userFromServer) {
-          console.log(userFromServer);
           const modeledUser = mapUserToModel(userFromServer);
-          console.log(modeledUser);
 
           setData(modeledUser);
         }
@@ -60,7 +57,6 @@ export const EditUserPage = () => {
     >
       <UserForm
         title="edit account"
-        // onSubmit={onSubmit}
         onSubmit={handleMySubmit}
         onReset={handleReset}
         errors={errors}

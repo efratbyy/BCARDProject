@@ -2,9 +2,6 @@ import { Divider, Box } from "@mui/material";
 import Stack from "@mui/material/Stack";
 import React from "react";
 
-// הינו מיכל אשר יסדר את האלמנטים הילדים בתוכו בסדר אורכי או רוחבי stsck
-// מסדר את האלמנטים אחד ליד השני ולא אחד מעל השני שזה הדיפולט direction="row"
-
 /********* basic Stack **********/
 // const MuiStack = () => {
 //   return (
@@ -17,7 +14,6 @@ import React from "react";
 // };
 
 // divider={<Divider orientation="vertical" flexItem />}
-// זה יקבע שהאלמנטים יסודרו אחד ליד השני עם קו מפריד בין כל אחד מהם
 
 /********* Stack Divider **********/
 const MuiStack = () => {

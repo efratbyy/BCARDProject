@@ -3,7 +3,6 @@ import Box from "@mui/material/Box";
 import NavItem from "../../../components/NavItem";
 import ROUTES from "../../../../routes/routesModel";
 
-// קומפוננטה שאחראית על מה יוצג כאשר המשתמש לא מחובר
 const NotLogged = () => {
   return (
     <Box>

@@ -7,6 +7,5 @@ export const getTime = () => {
 
 export const colorLog = (text: string, color: string = "white") => {
   console.log(`%c${text}: ${getTime()}`, `color: ${color}; font-weight: bold`);
-  // בקונסול css מאפשר לתת ערכים של - %c
   return null;
 };

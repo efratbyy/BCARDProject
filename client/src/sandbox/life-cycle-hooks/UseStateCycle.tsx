@@ -6,7 +6,6 @@ const UseStateCycle = () => {
     colorLog("In useState", "yellow");
 
     setTimeout(() => {
-      // שפועלת בלי סוף עד שאעצור אותה setImterval-פונקציה שפועלת רק פעם אחת בניגוד ל
       setCount((prev) => prev + 1);
     }, 3000);
 

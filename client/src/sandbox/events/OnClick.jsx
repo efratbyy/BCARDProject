@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "@mui/material/Button";
 
-/********* onClich no arguments **********/
+/********* onClick no arguments **********/
 // const OnClick = () => {
 //   const handleClick = () => console.log("you clicked!!!");
 
@@ -12,7 +12,7 @@ import Button from "@mui/material/Button";
 //   );
 // };
 
-/********* onClich with arguments **********/
+/********* onClick with arguments **********/
 // const OnClick = () => {
 //   const handleClick = (text) => console.log(text);
 
@@ -27,7 +27,7 @@ import Button from "@mui/material/Button";
 //   );
 // };
 
-/********* onClich with arguments **********/
+/********* onClick with arguments **********/
 const OnClick = () => {
   const handleClick = (text, e) => {
     console.log(e.target);
@@ -36,10 +36,18 @@ const OnClick = () => {
 
   return (
     <>
-      <Button variant="outlined" sx={{ m: 2 }} onClick={handleClick}>
+      <Button 
+      variant="outlined" 
+      sx={{ m: 2 }} 
+      onClick={(e) => handleClick("hallo", e)}
+      >
         Click me one!!!
       </Button>
-      <Button variant="outlined" sx={{ m: 2 }} onClick={(e) => handleClick(e)}>
+      <Button 
+      variant="outlined" 
+      sx={{ m: 2 }} 
+      onClick={(e) => handleClick("hallo", e)}
+      >
         Click me two!!!
       </Button>
       <Button

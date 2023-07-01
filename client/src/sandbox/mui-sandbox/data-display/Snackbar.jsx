@@ -13,9 +13,9 @@ const Snackbar = () => {
       <MuiSnackbar
         anchorOrigin={{ vertical: "top", horizontal: "right" }}
         open={isOpen}
-        onClose={() => setOpen((prev) => !prev)} // false-ל isOpen הופך את
-        autoHideDuration={3000} // קובע לכמה זמן הסנייק בר יהיה פתוח
-        message="In Snackbar" // קובע מה יהיה כתוב על הסנייק בר
+        onClose={() => setOpen((prev) => !prev)}
+        autoHideDuration={3000}
+        message="In Snackbar"
       />
     </>
   );

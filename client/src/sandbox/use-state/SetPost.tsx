@@ -90,11 +90,13 @@ const SetPost = () => {
       {!!posts.length && isLogged && (
         <Table>
           <TableHead style={{ backgroundColor: "lavender" }}>
+            <TableRow>
             <TableCell>no.</TableCell>
             <TableCell>Title</TableCell>
             <TableCell>Subtitle</TableCell>
             <TableCell>Author</TableCell>
             <TableCell>Created At</TableCell>
+            </TableRow>
           </TableHead>
           <TableBody>
             {posts.map((post, index) => (

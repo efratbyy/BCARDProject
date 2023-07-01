@@ -7,8 +7,7 @@ const UseEffectNoDependencies = () => {
 
   useEffect(() => {
     colorLog("In useEffect", "#2d65ff");
-  }); // לא מערך תלויות אומר לפונקציה להאזין לכל שינוי בכל המשתנים בקומפוננטה useEffect
-  //  !!!זה גורם לבאגים!!! לא לעשות זאת
+  });
 
   return (
     <div>

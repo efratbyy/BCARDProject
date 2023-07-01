@@ -15,7 +15,7 @@ import Typography from "@mui/material/Typography";
 //     <>
 //       <Typography
 //         variant="h4"
-//         align="center" // קןבע את האלמנט העיצובי variant
+//         align="center"
 //       >
 //         One
 //       </Typography>
@@ -30,7 +30,6 @@ import Typography from "@mui/material/Typography";
 //         variant="h4"
 //         align="center"
 //         component="p"
-//         // html-את אלמנט ה component-יקבע את האלמנט העיצובי וה variant-ה component במידה ונוסיף
 //       >
 //         One
 //       </Typography>
@@ -46,7 +45,7 @@ import Typography from "@mui/material/Typography";
 //         variant="h4"
 //         align="center"
 //         component="p"
-//         sx={{ color: "red", fontWeight: "bold" }} // קובע את עיצוב הטקסט. במידה ויש יותר משני מאפייני עיצוב נוציא את זה למאפיין חיצוני
+//         sx={{ color: "red", fontWeight: "bold" }}
 //       >
 //         One
 //       </Typography>

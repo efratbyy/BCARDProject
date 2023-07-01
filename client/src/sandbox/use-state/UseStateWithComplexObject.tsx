@@ -27,13 +27,8 @@ const UseStateWithComplexObject = () => {
       <input
         type="text"
         placeholder="Enter first name"
-        onChange={
-          (e) =>
-            setUser({ ...user, name: { ...user.name, first: e.target.value } })
-          // first מעתיק את כל האובייקט הקיים ומציג אותו ומשנה רק את הערך של ...user
-          // זה אירוע ההקלדה באינפוט e
-          // זה האלמנט עצמו-האינפוט target
-          // זה הערך שהוקלד value
+        onChange={(e) =>
+          setUser({ ...user, name: { ...user.name, first: e.target.value } })
         }
       />
       <br />

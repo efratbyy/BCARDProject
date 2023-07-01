@@ -14,7 +14,6 @@ const ROUTES = {
 };
 
 export const SANDBOX_ROUTES = {
-  // /sandbox/component :sandbox-לא נוסיף / לפני כי אז ימחק את תחילת הכתובת
   COMPONENT: "component",
   CONDITIONAL_RENDERING: "conditional-rendering",
   CUSTOM_HOOKS: "custom-hooks",

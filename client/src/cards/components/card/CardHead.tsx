@@ -9,7 +9,7 @@ const CardHead: React.FC<Props> = ({ image }) => {
   return (
     <CardMedia
       component="img"
-      image={url} // הכתובת של התמונה
+      image={url}
       alt={alt}
       sx={{ width: "100%", aspectRatio: "16/9", objectFit: "cover" }}
     />
